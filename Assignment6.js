@@ -1,4 +1,4 @@
-let typeName = "email";
+let typeName = "age";
 let nameType;
 
 let name = "biswajit";
