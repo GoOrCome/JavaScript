@@ -7,4 +7,4 @@ function generateOtp() {
 
 console.log(`Here is your otp: ${generateOtp()}`);
 
-// OUTPUT: Here is your otp: 2951
+// OUTPUT: Here is your otp: 5497
