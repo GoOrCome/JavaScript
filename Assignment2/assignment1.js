@@ -11,8 +11,8 @@ function CheckUser(user) {
   
 }
 
-CheckUser("Ram")
+CheckUser("Ram");
 // OUTPUT: Yes, Ram is a valid user.
 
-CheckUser("HariRam")
+CheckUser("HariRam");
 // OUTPUT: No, HariRam is not a valid user.
