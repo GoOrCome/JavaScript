@@ -1,52 +1,28 @@
-const students = [
-  {
-    name: "Mithun",
-    marks: 95,
-  },
-  {
-    name: "Prabir",
-    marks: 75,
-  },
-  {
-    name: "Alka",
-    marks: 92,
-  },
-  {
-    name: "Shivam",
-    marks: 70,
-  },
-  {
-    name: "Farman",
-    marks: 99,
-  },
-];
+function wordCounter(sentence) {
+  const wordCounts = sentence.split(/\W+/g) // Split using non-word characters
+    .filter(word => word) // Remove empty strings
+    .reduce((counts, word) => {
+      const lowerWord = word.toLowerCase();
+      counts[lowerWord] = (counts[lowerWord] || 0) + 1;
+      return counts;
+    }, {}); // Initialize counts object
 
-const checkResults = (name) => {
-  for (let student of students) {
-    if (student.name === name) {
-      // return student.marks > 90
-      if (student.marks > 90) {
-        console.log(
-          `Congratulations ${student.name}! You have cleared the exam.`
-        )
-      } else if(student.marks < 90){
-        console.log(`Sorry ! You have not cleared the exam.`)
-      } return;
-        // ? console.log(
-        //     `Congratulations ${student.name}! You have cleared the exam.`
-        //   )
-        // : console.log(`Sorry ! You have not cleared the exam.`);
-    }
-  } 
-  console.log("Invalid User !!!");
-};
+  return wordCounts;
+}
 
+const sentence = "please please submit your assignment on time, your assignments are important ";
+const result = wordCounter(sentence);
 
-checkResults("Mithun");
-// OUTPUT: Congratulations Mithun! You have cleared the exam.
+console.log(result);
 
-checkResults("Prabir");
-// OUTPUT: Sorry ! You have not cleared the exam.
+// OUTPUT:
 
-checkResults("Mithljl S");
-// OUTPUT: Invalid User !!!
+// { please: 2,
+//   submit: 1,
+//   your: 2,
+//   assignment: 1,
+//   on: 1,
+//   time: 1,
+//   assignments: 1,
+//   are: 1,
+//   important: 1 }
